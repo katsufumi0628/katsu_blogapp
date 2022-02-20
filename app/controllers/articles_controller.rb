@@ -1,12 +1,12 @@
 class ArticlesController < ApplicationController
     before_action :set_aricle, only: [:show, :edit, :update]
-    
+
     def index
+        raise StanderdError
       @articles = Article.all
     end
 
     def show
-
     end
 
     def new
@@ -36,13 +36,12 @@ class ArticlesController < ApplicationController
             render :edit
         end
     end
-    
+
     def destroy
         article = Article.find(params[:id])
         article.destroy!
         redirect_to root_path, notice: '削除に成功しました'
       end
-    
 
     private
     def article_params
