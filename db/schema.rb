@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 2022_02_26_025803) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "aticle_id", null: false
-    t.text "comment", null: false
+    t.integer "article_id", null: false
+    t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["aticle_id"], name: "index_comments_on_aticle_id"
+    t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
   create_table "users", force: :cascade do |t|
